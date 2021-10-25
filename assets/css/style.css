@@ -1,0 +1,55 @@
+body {
+    background-color: #102F45;
+}
+
+.post {
+    height: 400px;
+    width: 500px;
+    background-color: #ffffff;
+    margin: auto;
+}
+
+.userData {
+    width: 100%;
+    height: 60px;
+    background-color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.image_user {
+    margin-left: 10px;
+    height: 50px;
+    width: 50px;
+    background-color: fuchsia;
+    border-radius: 50%;
+}
+
+.name_user {
+    width: calc(100% - 70px);
+    background-color: cornflowerblue;
+    height: 100%;
+}
+
+.image_post {
+    height: calc(100% - 120px);
+}
+
+.image_post>img {
+    height: 100%;
+    width: 100%;
+    padding: 4px 1rem;
+}
+
+.userData>.btnLike {
+    justify-content: space-around;
+}
+
+.btnLike,
+.counterLike {
+    margin: 0 50px;
+    width: 30%;
+    background-color: fuchsia;
+    height: 70%;
+}

@@ -11,3 +11,10 @@ BONUS:
 Bonus 1: Date formattate come tempo relativo (es. "due mesi fa")
 Bonus 2: Gestire l'assenza dell'immagine profilo con un elemento di fallback che contiene le iniziali dell'utente (es. Sofia Perlari > SP)
  Bonus 3: Click al pulsante "Mi Piace" incrementa il counter dei like al post. */
+
+
+/* aggiunta del titolo */
+const firstTitle = 'Social Posts'
+const placeToPrint = document.querySelector('.container')
+let titleToPrint = `<h1 class="title text-center text-light mt-4 fw-bold">${firstTitle}</h1>`
+placeToPrint.insertAdjacentHTML("afterbegin", titleToPrint)
