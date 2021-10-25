@@ -18,3 +18,35 @@ const firstTitle = 'Social Posts'
 const placeToPrint = document.querySelector('.container')
 let titleToPrint = `<h1 class="title text-center text-light mt-4 fw-bold">${firstTitle}</h1>`
 placeToPrint.insertAdjacentHTML("afterbegin", titleToPrint)
+
+
+
+
+
+//costruzione oggetto di un utente
+const posts = [{
+    name: 'Phil Mangione',
+    profilePicture: 'https://picsum.photos/50/50',
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit consectetur cumque alias consequuntur dolorum aspernatur!Odit consectetur cumque alias consequuntur',
+    image: 'https://picsum.photos/450/500'
+}]
+
+const nameDataUser = document.querySelector('.name_user');
+const profilePicDataUser = document.querySelector('.image_user');
+const descriptionDataUser = document.querySelector('.userData.description');
+const imageDataUser = document.querySelector('.image_post')
+const btnLike = document.querySelector('.btnLike');
+const placeLike = document.querySelector('.counterLike')
+placeLike.innerHTML = `<p>Piace a <span class="fw-bold">0</span> persone</p>`
+
+
+let like = 0
+btnLike.addEventListener('click', function() {
+    like++;
+    placeLike.innerHTML = `<p>Piace a <span class="fw-bold">${like}</span> persone</p>`
+})
+
+nameDataUser.innerHTML = `<p>${posts[0].name}</p>`
+profilePicDataUser.innerHTML = `<img src=${posts[0].profilePicture}>`
+descriptionDataUser.innerHTML = `<p>${posts[0].description}</p>`
+imageDataUser.innerHTML = `<img src=${posts[0].image}>`

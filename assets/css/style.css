@@ -5,31 +5,38 @@ body {
 .post {
     height: 400px;
     width: 500px;
-    background-color: #ffffff;
     margin: auto;
 }
 
 .userData {
     width: 100%;
     height: 60px;
-    background-color: gold;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+.userData.description {
+    text-align: start;
+    font-size: 10px;
+    padding: 0 1rem;
+}
+
 .image_user {
     margin-left: 10px;
-    height: 50px;
-    width: 50px;
-    background-color: fuchsia;
+}
+
+.image_user>img {
     border-radius: 50%;
 }
 
 .name_user {
     width: calc(100% - 70px);
-    background-color: cornflowerblue;
     height: 100%;
+}
+
+.name_user>p {
+    padding: 10px;
 }
 
 .image_post {
@@ -42,14 +49,19 @@ body {
     padding: 4px 1rem;
 }
 
-.userData>.btnLike {
-    justify-content: space-around;
-}
-
 .btnLike,
 .counterLike {
     margin: 0 50px;
     width: 30%;
-    background-color: fuchsia;
-    height: 70%;
+    height: 40px;
+}
+
+.btnLike {
+    background-color: transparent;
+    border: none;
+}
+
+.counterLike {
+    padding-top: 10px;
+    font-size: 14px;
 }
