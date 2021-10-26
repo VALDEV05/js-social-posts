@@ -25,30 +25,50 @@ placeToPrint.insertAdjacentHTML("afterbegin", titleToPrint)
 
 //costruzione oggetto di un utente
 const posts = [{
-    name: 'Phil Mangione',
+    author: {
+        name: 'Phil Mangione',
+        avatar: '2 mesi fa'
+    },
     profilePicture: 'https://picsum.photos/50/50',
     description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit consectetur cumque alias consequuntur dolorum aspernatur!Odit consectetur cumque alias consequuntur',
-    image: 'https://picsum.photos/450/500'
+    image: 'https://picsum.photos/450/500',
+    like: 100
 }, {
-    name: 'Phil Iamocela',
+    author: {
+        name: 'Phil Iamocela',
+        avatar: '3 mesi fa'
+    },
     profilePicture: 'https://picsum.photos/50/50',
     description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit consectetur cumque alias consequuntur dolorum aspernatur!Odit consectetur cumque alias consequuntur',
-    image: 'https://picsum.photos/450/500'
+    image: 'https://picsum.photos/450/500',
+    like: 150
 }, {
-    name: 'Phil Iannarelli',
+    author: {
+        name: 'Phil Iannarelli',
+        avatar: '1 mesi fa'
+    },
     profilePicture: 'https://picsum.photos/50/50',
     description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit consectetur cumque alias consequuntur dolorum aspernatur!Odit consectetur cumque alias consequuntur',
-    image: 'https://picsum.photos/450/500'
+    image: 'https://picsum.photos/450/500',
+    like: 80
 }, {
-    name: 'Mario Rossi',
+    author: {
+        name: 'Mario Rossi',
+        avatar: 'Oggi'
+    },
     profilePicture: 'https://picsum.photos/50/50',
     description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit consectetur cumque alias consequuntur dolorum aspernatur!Odit consectetur cumque alias consequuntur',
-    image: 'https://picsum.photos/450/500'
+    image: 'https://picsum.photos/450/500',
+    like: 0
 }, {
-    name: 'Girolamo Seghetta',
+    author: {
+        name: 'Girolamo Seghettas',
+        avatar: 'Ieri'
+    },
     profilePicture: 'https://picsum.photos/50/50',
     description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit consectetur cumque alias consequuntur dolorum aspernatur!Odit consectetur cumque alias consequuntur',
-    image: 'https://picsum.photos/450/500'
+    image: 'https://picsum.photos/450/500',
+    like: 20
 }]
 
 
@@ -56,11 +76,15 @@ const posts = [{
 
 //stampa a schermo
 for (let index = 0; index < posts.length; index++) {
-
     post = `<div class="post bg-light my-5">
                 <div class="userData user">
-                    <div class="image_user"><img src=${posts[index].profilePicture}></div>
-                    <div class="name_user"><p>${posts[index].name}</p></div>
+                    <div class="image_user">
+                        <img src=${posts[index].profilePicture}>
+                    </div>
+                    <div class="name_user">
+                        <p>${posts[index].author.name}</p>
+                        <span>${posts[index].author.avatar}</span>
+                    </div>
                 </div>
                 <div class="userData description">
                     <p>${posts[index].description}</p>
@@ -68,13 +92,23 @@ for (let index = 0; index < posts.length; index++) {
                 <div class="image_post">
                     <img src=${posts[index].image}>
                 </div>
-                <div class="userData like bg-light">
-                    <button class="btnLike d-flex justify-content-center align-items-center text-dark"><i class="fas fa-thumbs-up">
-                    </i> &nbsp;MI PIACE
-                </button>
-                <div class="counterLike d-flex justify-content-center align-items-center">Piace a  persone</div>
+                <div class="userData description bg-light">
+                    <button class="btnLike d-flex justify-content-center align-items-center text-dark" id= "${index}"><i class="fas fa-thumbs-up"></i> &nbsp;MI PIACE</button>
+                    <div class="counterLike d-flex justify-content-center align-items-center"> Piace a ${posts[index].like} persone</div>
+                </div>
             </div>`
     placeToPrint.innerHTML += post
 
 
 }
+/* for (let index = 0; index < posts.length; index++) {
+    likePost = posts[index].like
+
+    const btnLike = document.getElementById(`${index}`);
+    btnLike.addEventListener('click', function() {
+        console.log(`like ${index}`);
+        newLikePost = likePost++
+    })
+    newLikePost = posts[index].like
+    console.log(newLikePost);
+} */
